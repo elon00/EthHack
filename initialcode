@@ -1,0 +1,70 @@
+Initial Code for the Project
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+/**
+ * @title SimpleStorage
+ * @dev A very basic smart contract to demonstrate storage and interaction.
+ * This contract allows a user to store a number and retrieve it.
+ * It also includes a potential "vulnerability" for demonstration purposes:
+ * an owner-only function that could be misused if not properly managed.
+ */
+contract SimpleStorage {
+    address public owner; // The owner of the contract
+    uint256 public storedData; // A public variable to store a number
+
+    // Event emitted when data is updated
+    event DataStored(address indexed user, uint256 newData);
+
+    // Constructor: Sets the deployer as the owner
+    constructor() {
+        owner = msg.sender;
+    }
+
+    /**
+     * @dev Modifier to restrict access to only the owner of the contract.
+     */
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Caller is not the owner");
+        _; // Continues execution of the function
+    }
+
+    /**
+     * @dev Stores a new number.
+     * @param _data The number to store.
+     */
+    function set(uint256 _data) public {
+        storedData = _data;
+        emit DataStored(msg.sender, _data);
+    }
+
+    /**
+     * @dev Retrieves the currently stored number.
+     * @return The stored number.
+     */
+    function get() public view returns (uint256) {
+        return storedData;
+    }
+
+    /**
+     * @dev A function that only the owner can call.
+     * For demonstration, this could be seen as a sensitive function.
+     * In a real audit, the AI might flag this for re-entrancy or access control issues
+     * if not properly secured, even if it's simple here.
+     * @param _newOwner The new address to set as owner.
+     */
+    function transferOwnership(address _newOwner) public onlyOwner {
+        require(_newOwner != address(0), "New owner cannot be the zero address");
+        owner = _newOwner;
+    }
+
+    /**
+     * @dev Fallback function to receive Ether.
+     * This is intentionally left without any checks to demonstrate a potential
+     * vulnerability (e.g., if it's not supposed to receive Ether or handle it).
+     */
+    receive() external payable {
+        // This contract can receive Ether without any specific logic.
+        // An AI might flag this if Ether handling is not explicitly defined or secured.
+    }
+}
