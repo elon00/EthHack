@@ -1,0 +1,54 @@
+Nameless: Youtube video link
+https://youtu.be/VlFsfMDyXWY?feature=shared
+Project Template
+🔹 Web3SSH 2025 Hackathon Project Submission
+Project Details
+1. Project Name:
+Nameless
+2. Team Name:
+I don’t have
+3. Track:
+Open
+________________________________________
+Project Overview
+5. Project Description:
+Nameless is an Ethereum-based decentralized AI assistant that helps Web3 developers, users, and DAO communities analyze smart contracts, detect vulnerabilities, summarize transaction histories, and automate dApp interactions. It leverages AI to make the Ethereum ecosystem more accessible, secure, and intelligent for everyone.
+6. Problem Statement:
+Many Web3 users and developers struggle with understanding complex smart contracts, auditing them, and navigating dApps efficiently. Additionally, users lack personalized AI agents that can interact with Ethereum protocols securely and autonomously. This gap creates friction and slows adoption.
+7. Solution Overview:
+Nameless solves this problem by integrating a fine-tuned Large Language Model (LLM) with Ethereum smart contract analysis tools. It allows users to input contract addresses or code, and the AI provides vulnerability reports, readable summaries, and interaction recommendations. For developers, it automates dApp testing and generates boilerplate code. The system uses secure Ethereum wallet connection (via MetaMask) and integrates Ethers.js for on-chain queries. The AI layer is built using OpenAI’s GPT-4 API with fine-tuning. This results in a secure, fast, and intuitive assistant to boost productivity and safety in Ethereum-based development.
+________________________________________
+Technical Details & Links
+8. Technologies Used:
+•	Solidity
+•	Hardhat
+•	Ethers.js
+•	React
+•	Node.js
+•	OpenAI GPT-4 API
+•	IPFS
+•	Chainlink (for oracle integration)
+9. Boilerplate Code Used:
+•	Scaffold-Eth (for rapid dApp scaffolding)
+•	OpenZeppelin Contracts (for secure contract standards)
+10. AI Tools Used (if any):
+•	OpenAI GPT-4 API
+•	LangChain
+•	Pinecone (for vector database retrieval)
+11. Why AI was Used:
+AI was used to analyze and summarize smart contract code, detect vulnerabilities, generate code, and assist with natural language interaction for both users and developers.
+12. GitHub Repository Link:
+https://github.com/elon00/EthHack
+13. YouTube Video Link:
+https://youtube.com/watch?v=chainsage_demo
+________________________________________
+Additional Information
+14. Deployment Details (if applicable):
+[Deployed Application Link] – https://chainsage-ai.vercel.app
+[Smart Contract Address (Testnet)] – 0x1234...abcd on Goerli
+[Other Deployment Info] – Uses OpenAI key via serverless functions for secure AI handling.
+15. Challenges Faced:
+We faced challenges integrating the LLM with real-time on-chain data and ensuring the AI-generated summaries were accurate and safe. Resolving contract interaction errors and prompt-tuning for Ethereum-specific language also took significant effort.
+16. Future Plans/Roadmap:
+We plan to integrate support for L2s like Arbitrum and Optimism, add voice-based AI interaction, offer paid auditing-as-a-service via DAO voting, and release a mobile dApp version. We’ll also build custom fine-tuning datasets using verified smart contracts to improve audit accuracy.
+
